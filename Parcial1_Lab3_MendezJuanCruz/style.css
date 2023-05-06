@@ -1,0 +1,99 @@
+/*
+body{
+    text-align: center;
+}
+
+form{
+    border: 2px solid black;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: inline-block;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table,th,td{
+    border: 2px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+thead{
+    background-color: aqua;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: medium;
+    font-weight: bold;
+}
+
+ #TableDiv{
+    text-align: center;
+ }
+
+ #formABM {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #formABM input[type="text"],
+  #formABM input[type="number"],
+  #formABM select {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  #formABM label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  #formABM button {
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #formABM button:hover {
+    background-color: #3e8e41;
+  }
+  
+  #comboOpciones, #pepe, #TableDiv {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+  }
+
+  input[type="button"]:hover, button:hover {
+    background-color: #0062cc;
+  }
+
+  #formTabla button {
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  */

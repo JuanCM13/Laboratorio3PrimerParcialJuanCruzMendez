@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial 1</title>
+    <!-- <script src="./jsFile.js" defer></script> -->
+    <!-- <script src="./jsFile_2.js" defer></script> -->
+    <!-- <link rel="stylesheet" type="text/css" href="./style.css"> -->
+</head>
+<body>
+    <style>
+        body{
+    text-align: center;
+}
+
+form{
+    border: 2px solid black;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: inline-block;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table,th,td{
+    border: 2px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+thead{
+    background-color: aqua;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: medium;
+    font-weight: bold;
+}
+
+ #TableDiv{
+    text-align: center;
+ }
+
+ #formABM {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #formABM input[type="text"],
+  #formABM input[type="number"],
+  #formABM select {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  #formABM label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  #formABM button {
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #formABM button:hover {
+    background-color: #3e8e41;
+  }
+  
+  #comboOpciones, #pepe, #TableDiv {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+  }
+
+  input[type="button"]:hover, button:hover {
+    background-color: #0062cc;
+  }
+
+  #formTabla button {
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+    </style>
+    <header>
+        <h1>PARCIAL 1</h1>
+    </header>
+
+    <form action="" id="formTabla">
+        <label for="">FORM DATOS</label><br>
+        <label for="">Filtrar por</label>
+        <select name="" id="comboOpciones">
+            <option value="Todos">Todos</option>
+            <option value="Heroe">Heroe</option>
+            <option value="Villano">Villano</option>
+        </select><br>
+        <label for="">Calcular promedio edades</label>
+        <input type="text" value="" id="pepe" readonly>
+        <input type="button" value="Calcular" id="btnCalcular"><br>
+        <label for="">Mostrar columnas:</label><br>
+        <input type="checkbox" name="Id">ID
+        <input type="checkbox" name="Nombre">NOMBRE
+        <input type="checkbox" name="Apellido">APELLIDO
+        <input type="checkbox" name="Edad">EDAD
+        <input type="checkbox" name="AlterEgo">ALTER EGO
+        <input type="checkbox" name="Ciudad">CIUDAD
+        <input type="checkbox" name="Publicado">PUBLICADO
+        <input type="checkbox" name="Enemigo">ENEMIGO
+        <input type="checkbox" name="Robos">ROBOS
+        <input type="checkbox" name="Asesinatos">ASESINATOS
+        <div id="TableDiv"></div>
+        <button type="button" id="btnAgregar">Agregar</button>
+    </form>            
+    <form action="" id="formABM">
+        <h1>Formulario ABM</h1>
+        
+        <label for="inputId">ID:</label>
+        <input type="number" name="" id="inputId"><br>
+        
+        <label for="inputName" pattern="[a-zA-Z]+">Nombre:</label>
+        <input type="text" name="" id="inputName"><br>
+        
+        <label for="inputApellido" pattern="[a-zA-Z]+">Apellido:</label>
+        <input type="text" name="" id="inputApellido"><br>
+        
+        <label for="inputEdad">Edad:</label>
+        <input type="number" name="" id="inputEdad"><br>
+        
+        <label for="comboTipoUser">Tipo de Usuario:</label><br>
+        <select name="" id="comboTipoUser">
+            <option value="Seleccione">Seleccione</option>
+            <option value="Heroe">Heroe</option>
+            <option value="Villano">Villano</option>
+        </select><br>
+        
+        <label for="inputAlterEgo">Alter Ego:</label>
+        <input type="text" name="" id="inputAlterEgo"><br> 
+        
+        <label for="inputCiudad">Ciudad:</label>
+        <input type="text" name="" id="inputCiudad"><br> 
+        
+        <label for="inputPublicado">Publicado:</label>
+        <input type="number" name="" id="inputPublicado" max="1440"><br> 
+        
+        <label for="inputEnemigo">Enemigo:</label>
+        <input type="text" name="" id="inputEnemigo"><br> 
+
+        <label for="inputRobos">Robos:</label>
+        <input type="number" name="" id="inputRobos"><br> 
+
+        <label for="inputAsesinatos">Asesinatos:</label>
+        <input type="number" name="" id="inputAsesinatos"><br> 
+       
+        <button id="btnAceptar" type="button">Aceptar</button>
+        <button id="btnActualizar" type="button">Actualizar</button>
+        <button id="btnEliminar" type="button">Eliminar</button>
+        <button id="btnCancelar" type="button">Cancelar</button>
+    </form>
+</body>
+<script>
+    
+//******DEFINES****** */
+const defaultApellido = "Sin apellido";
+const defaultNombe = "Sin nombre";
+const defaultTelefono = "Sin telefono";
+const defaultNumerico= -1;
+
+
+//ARRAY PERSONAS (JSON ORIGINAL)
+const jsonData = '[{"id":1, "nombre":"Clark", "apellido":"Kent", "edad":45, "alterego":"Superman", "ciudad":"Metropolis","publicado":2002},{"id":2, "nombre":"Bruce", "apellido":"Wayne", "edad":35, "alterego":"Batman", "ciudad":"Gotica","publicado":20012},{"id":3, "nombre":"Bart", "apellido":"Alen", "edad":30, "alterego":"Flash", "ciudad":"Central","publicado":2017},{"id":4, "nombre":"Lex", "apellido":"Luthor", "edad":18, "enemigo":"Superman", "robos":500,"asesinatos":7},{"id":5, "nombre":"Harvey", "apellido":"Dent", "edad":20, "enemigo":"Batman", "robos":750,"asesinatos":2},{"id":666, "nombre":"Celina", "apellido":"kyle", "edad":23, "enemigo":"Batman", "robos":25,"asesinatos":1}]';
+const arrayAux = Array(); //asi persisto el array de personas original, si selecciona todos, reasigno este al listadoPersonas
+
+
+//****DEF VARIABLES Y CONSTANTES**** */
+var listadoPersonas_aMostrar = Array(); 
+const persnosArr = JSON.parse(jsonData);
+const select = document.getElementById("comboOpciones");
+const divTabla = document.getElementById("TableDiv");
+const btnCalcular = document.getElementById("btnCalcular");
+const inputEdad = btnCalcular.previousElementSibling;
+const checkboxes = document.querySelectorAll("input[type='checkbox']");
+const btnAgregar = document.getElementById("btnAgregar");
+const formularioTabla = document.getElementById("formTabla");
+const formularioABM = document.getElementById("formABM");
+// formularioTabla.style.display = "inline-block";
+// formularioABM.style.display = "none";
+ocultarABM_mostrarTable();
+const selectComboTipoUser = document.getElementById("comboTipoUser");
+const inputsABM = formularioABM.querySelectorAll("input");
+const btnAceptar = document.getElementById("btnAceptar");
+const btnCancelar = document.getElementById("btnCancelar");
+const btnActualizar = document.getElementById("btnActualizar");
+const btnEliminar = document.getElementById("btnEliminar");
+
+//*************************************MANEJADORES DE EVENTOS****************************************** */
+
+//MANEJADOR CANCELAR
+btnCancelar.addEventListener("click",()=>{
+    ocultarABM_mostrarTable();
+});
+
+//MANEJADOR CAMBIO DE LISTADO (TODOS, EMPLEADOS O CLIENTES)
+select.addEventListener("change",()=>{
+    switch(select.value)
+    {
+        case "Todos":
+            listadoPersonas_aMostrar = arrayAux;
+            break;
+        case "Heroe":
+            listadoPersonas_aMostrar = arrayAux.filter((elemento)=>{
+                return (elemento instanceof Heroe);
+            });
+            break;
+        case "Villano":
+            listadoPersonas_aMostrar = arrayAux.filter((elemento)=>{
+                return (elemento instanceof Villano);
+            });
+            break; 
+    }
+    generarTablaPersonas(listadoPersonas_aMostrar, divTabla);
+    //mapChecksShowOrHide_Columns();
+    hideColumnBy_userType();
+});
+
+
+//MANEJADORES LIMITE DE NUMERO
+const inputPublicacion = document.getElementById("inputPublicado");
+inputPublicacion.addEventListener("blur",(e)=>{
+    if(e.target.value < 1940){
+        alert("Error, la publicacion debe ser mayor a 1939..");
+        ocultarABM_mostrarTable();
+    }
+});
+
+const inputRobos = document.getElementById("inputRobos");
+inputRobos.addEventListener("blur",(e)=>{
+    if(e.target.value < 1){
+        alert("Error, la cantidad de robos debe ser mayor a 0..");
+        ocultarABM_mostrarTable();
+    }
+});
+
+const inputAsesinatos = document.getElementById("inputAsesinatos");
+inputAsesinatos.addEventListener("blur",(e)=>{
+    if(e.target.value < 1){
+        alert("Error, la cantidad de asesinatos debe ser mayor a 0..");
+        ocultarABM_mostrarTable();
+    }
+});
+
+
+//MANEJADOR CLICK, CHECKBOXES
+checkboxes.forEach(element => {
+    element.checked = true;
+    element.addEventListener("click",(e)=>{
+        if(e){  
+            mapChecksShowOrHide_Columns(e.name,e.checked);
+        }
+    });
+});
+
+
+//MANEJADOR CALCULAR EDAD
+btnCalcular.addEventListener("click",()=>{    
+    if(listadoPersonas_aMostrar.length > 0)
+    {
+        let valor = listadoPersonas_aMostrar.reduce((valorActual,elementoActual)=>{
+            return valorActual+ (parseInt(elementoActual.getEdad()));
+        },0);
+        if(valor > 0)
+        {
+            inputEdad.value = (valor/listadoPersonas_aMostrar.length).toString();
+            console.log(inputEdad.value);
+        }
+    }    
+});
+
+
+//MANEJADOR BOTON AGREGAR
+btnAgregar.addEventListener("click",(e)=>{
+    if(formularioTabla && formularioABM)
+    {
+        mostrarFormABM(null);
+    }
+});
+
+
+//MANEJADOR BOTON ACTUALIZAR
+btnActualizar.addEventListener("click",(e)=>{
+    let arrInputs = formularioABM.querySelectorAll('input');
+    let userToUpdate = getUserById(arrInputs[0].value);
+    let tipoUsuario = selectComboTipoUser.select;
+
+    for(let i=0;i<arrInputs.length;i++){
+        if(arrInputs[i].value === ""){
+            if(! ( (tipoUsuario === "Heroe" && (i === 7 || i === 8 || i == 9)) || 
+            (tipoUsuario === "Villano" && (i === 4 || i === 5 || i == 6))))
+            {
+                labelAssoc = document.querySelector(`label[for="${arrInputs[i].id}"]`);
+                alert("Error, debe completar el input: "+labelAssoc.textContent+"...");
+                return;
+            }           
+        }
+    }
+    let userAux;
+    switch(tipoUsuario){ 
+        case "Heroe":
+            //id,nombre,apellido,edad,alterEgo,ciudad,publicado
+            userAux = new Heroe(arrInputs[0].value,arrInputs[1].value,arrInputs[2].value,
+                arrInputs[3].value,arrInputs[4].value,arrInputs[5].value,arrInputs[6].value);
+        break;
+        case "Villano":
+            //id,nombre,apellido,edad,sueldo,ventas
+            userAux = new Villano(arrInputs[0].value,arrInputs[1].value,arrInputs[2].value,
+                arrInputs[3].value,arrInputs[7].value,arrInputs[8].value,arrInputs[9].value);
+        break;
+    }
+    if(userAux){
+        if(updateUser(userAux)){
+            alert("Usuario actualizado con exito..");
+            generarTablaPersonas(listadoPersonas_aMostrar, divTabla);                    
+            hideColumnBy_userType();
+            ocultarABM_mostrarTable();
+        }else{
+            alert("Fallo la actualizacion del usuario..");
+        }
+    }
+});
+
+
+//MANEJADOR SELECTOR DE FORMULARIO ABM (CLIENTE O EMPLEADO)
+selectComboTipoUser.addEventListener("change",()=>{
+    if(selectComboTipoUser.value === "Heroe")
+    {        
+        for(let i=4;i<inputsABM.length;i++){
+            (inputsABM[i].previousElementSibling).style.display = i<7?"inline-block":"none";
+             inputsABM[i].style.display = i<7?"inline-block":"none";
+        }
+    }
+    else{
+        if(selectComboTipoUser.value === "Villano")
+        {
+            for(let i=4;i<inputsABM.length;i++){
+                (inputsABM[i].previousElementSibling).style.display = i>6?"inline-block":"none";
+                 inputsABM[i].style.display = i>6?"inline-block":"none";
+            }   
+        }        
+    }
+});
+
+
+//MANEJADOR, BOTON ELIMINAR 
+btnEliminar.addEventListener("click",()=>{
+    let arrInputs = formularioABM.querySelectorAll('input');
+    if(arrInputs[0].value !== ""){
+        if(deleteUser(arrInputs[0].value)){
+            alert("Usuario eliminado con exito..");
+        }else{
+            alert("Error, al eliminar el usuario..");
+        }
+    }
+    generarTablaPersonas(listadoPersonas_aMostrar, divTabla);                    
+    hideColumnBy_userType();
+    ocultarABM_mostrarTable();
+});
+
+
+//MANEJADOR, BOTON ACEPTAR (FORMULARIO ABM)
+btnAceptar.addEventListener("click",()=>{
+    let seP = true;
+    let labelAssoc;
+    let arrInputs = formularioABM.querySelectorAll('input');
+    let tipoUsuario = selectComboTipoUser.value;    
+    
+    if(tipoUsuario !== "Seleccione")
+    {
+        if(arrInputs.length > 0){
+            for(let i=0; i<arrInputs.length;i++){                
+                if(i === 0 && arrInputs[i].value !== "" && IdExists(arrInputs[i].value)){              
+                    alert("Error, el id ya existe..");
+                    return;
+                }
+                if(arrInputs[i].value === ""){
+                    if(! ( (tipoUsuario === "Heroe" && (i === 7 || i === 8 || i == 9)) || 
+                                    (tipoUsuario === "Villano" && (i === 4 || i === 5 || i == 6))))
+                    {
+                        seP = false;
+                        labelAssoc = document.querySelector(`label[for="${arrInputs[i].id}"]`);
+                        //console.log(labelAssoc);
+                        alert("Error, debe completar el input: "+labelAssoc.textContent+"...");
+                        return;
+                    }           
+                }
+            }
+            if(seP){
+                let userAux;
+                switch(tipoUsuario){ 
+                    case "Heroe":
+                        //id,nombre,apellido,edad,alterEgo,ciudad,publicado
+                        userAux = new Heroe(arrInputs[0].value,arrInputs[1].value,arrInputs[2].value,
+                            arrInputs[3].value,arrInputs[4].value,arrInputs[5].value,arrInputs[6].value);
+                    break;
+                    case "Villano":
+                        //id,nombre,apellido,edad,sueldo,ventas
+                        userAux = new Villano(arrInputs[0].value,arrInputs[1].value,arrInputs[2].value,
+                            arrInputs[3].value,arrInputs[7].value,arrInputs[8].value,arrInputs[9].value);
+                    break;
+                }
+                if(userAux){
+                    listadoPersonas_aMostrar.push(userAux);
+                    console.log(userAux);
+                    generarTablaPersonas(listadoPersonas_aMostrar, divTabla);                    
+                    hideColumnBy_userType();
+                    ocultarABM_mostrarTable();
+                }
+            }
+        }
+    }else{
+        alert("Debe elegir el tipo de usuario..");
+    }
+});
+
+//***************************************************************************************************** */
+
+
+//************************************CLASE PERSONA**************************************************** */
+
+class Persona{
+    id;
+    nombre;
+    apellido;
+    edad;
+
+    constructor(id,nombre,apellido,edad){
+        this._setApellido(apellido);
+        this._setNombre(nombre);
+        this._setEdad(edad);
+        this.#setId(id);
+    }
+
+    toString = ()=>{ 
+        return `Nombre: ${this.nombre}\nApellido: ${this.apellido}\nEdad: ${this.edad}`;            
+    }
+    
+    toJson = ()=>{
+        return JSON.stringify(this);
+    }
+
+    _setApellido = apellido=>{
+        this.apellido = isValidString(apellido)?apellido:defaultApellido;
+    }
+
+    _setNombre = nombre=>{
+        this.nombre = isValidString(nombre)?nombre:defaultNombe;
+    }
+
+    _setEdad = edad=>{
+        this.edad = edad != null && parseInt(edad) > 14?edad:defaultNumerico;
+    }
+
+    #setId = id=>{
+        this.id = id != null && !isNaN(id)?id:-1;
+    }
+
+    getApellido = ()=>{
+        return this.apellido;
+    }
+
+    getNombre = ()=>{
+        return this.nombre;
+    }
+
+    getEdad = ()=>{
+        return this.edad;
+    }
+
+    getId = ()=>{
+        return this.id;
+    }
+}
+
+//************************************CLASE Heroe**************************************************** */
+
+class Heroe extends Persona{
+    alterEgo;
+    ciudad;
+    publicado;
+
+    constructor(id,nombre,apellido,edad,alterEgo,ciudad,publicado){
+        super(id,nombre,apellido,edad);
+            this.#setAlterEgo(alterEgo);
+            this.#setCiudad(ciudad);
+            this.#setPublicado(publicado);
+    }
+
+    // toString = ()=>{ 
+    //     return `${typeof(this)}:\n${super.toString()}\nSueldo: ${this.sueldo}\nVentas: ${this.sueldo}`;            
+    // }
+
+    // toJson = ()=>{
+    //     return JSON.stringify(...JSON.parse(base.toJson()),...this);
+    // }
+
+    #setAlterEgo = alterEgo=>{
+        this.alterEgo = alterEgo != null?alterEgo:"Sin asignar";
+    }
+
+    #setCiudad = ciudad=>{
+        this.ciudad = ciudad != null?ciudad:"Sin asignar";
+    }
+
+    #setPublicado = publicado=>{
+        this.publicado = publicado != null && parseInt(publicado) > 1940?publicado:-1;
+    }
+}
+
+
+//************************************CLASE Enemigo**************************************************** */
+
+
+
+class Villano extends Persona{
+    enemigo;
+    robos;
+    asesinatos;
+
+    constructor(id,nombre,apellido,edad,enemigo,robos,asesinatos){
+        super(id,nombre,apellido,edad);
+            this.#setEnemigo(enemigo);
+            this.#setRobos(robos);
+            this.#setAsesinatos(asesinatos);
+    }
+
+    // toString = ()=>{ 
+    //     return `${typeof(this)}:\n${super.toString()}\Compras: ${this.compras}\nTelefono: ${this.telefono}`;            
+    // }
+
+    // toJson = ()=>{
+    //     return JSON.stringify(...JSON.parse(base.toJson()),...this);
+    // }
+
+    #setEnemigo = enemigo=>{
+        this.enemigo = enemigo != null?enemigo:"Sin asignar";
+    }
+
+    #setRobos = robos=>{
+        this.robos = robos != null && parseInt(robos) > 0?robos:-1;
+    }
+
+    #setAsesinatos = asesinatos=>{
+        this.asesinatos = asesinatos != null && parseInt(asesinatos) > 0?asesinatos:-1;
+    }
+}
+
+
+
+//************************************CONVERSION A ARRAY DE PERSONAS***************************************** */
+//id,nombre,apellido,edad,alterEgo,ciudad,publicado
+if(persnosArr != null)
+{       
+    persnosArr.forEach(persona => {
+        //console.log(persona.length);
+        if(persona != null && Object.keys(persona).length === 7)
+        {
+            if("alterego" in persona)
+            {
+                //osea que es persona
+                arrayAux.push(new Heroe(persona["id"],persona["nombre"],persona["apellido"],persona["edad"],persona["alterego"],persona["ciudad"],persona["publicado"]));
+            }
+            else
+            {
+                if("enemigo" in persona)
+                {
+                    arrayAux.push(new Villano(persona["id"],persona["nombre"],persona["apellido"],persona["edad"],persona["enemigo"],persona["robos"],persona["asesinatos"]));
+                }
+            }
+        }
+        listadoPersonas_aMostrar = arrayAux;
+    });
+}
+console.log(listadoPersonas_aMostrar);
+
+//************************************************************************************************************ */
+
+
+
+
+//********************************************FUNCIONES EN GENERAL********************************************* */
+function isValidString(cadena){
+    return (cadena != null && typeof(cadena) === "string" && cadena.length > 0);
+}
+
+function getCheckBox_ByName(name){
+    if(name && checkboxes)
+    {
+        for(let i=0;i<checkboxes.length;i++){
+            if(checkboxes[i].name == name)
+            {
+                return checkboxes[i];
+            }
+        }
+    }
+}
+
+function IdExists(idToCheck){
+    if(listadoPersonas_aMostrar) {       
+        for(let i=0;i<listadoPersonas_aMostrar.length;i++){
+            if(listadoPersonas_aMostrar[i].getId() == idToCheck){
+                return true;
+            }
+        };
+    }
+    return false;
+}
+
+
+function getUserById(id){
+    if(listadoPersonas_aMostrar){
+        for(let i=0;i<listadoPersonas_aMostrar.length;i++){
+            if(listadoPersonas_aMostrar[i].getId() == id){
+                return listadoPersonas_aMostrar[i];
+            }
+        }
+    }
+    return null;
+}
+
+
+function updateUser(user){
+    if(listadoPersonas_aMostrar && user){
+        for(let i=0;i<listadoPersonas_aMostrar.length;i++){
+            if(listadoPersonas_aMostrar[i].getId() == user.getId()){
+                listadoPersonas_aMostrar[i] = user;
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+
+function deleteUser(userId){
+    if(listadoPersonas_aMostrar && userId){
+        for(let i=0;i<listadoPersonas_aMostrar.length;i++){
+            if(listadoPersonas_aMostrar[i].getId() == userId){
+                listadoPersonas_aMostrar.splice(i,1);
+                return true;
+            }
+        }
+    }
+    return false;
+}
+//************************************************************************************************************ */
+
+
+
+
+
+//********************************************FUNCIONES DE LA TABLA********************************************* */
+//Funcion para eliminar tabla
+function eliminarTabla()
+{
+    const table = document.getElementById('tablaId');
+    if (table) {
+      table.parentNode.removeChild(table);
+    }
+}
+
+// Función para generar el encabezado de la tabla
+function generarEncabezadoTabla(tabla) {
+    var lastSort = null;
+    const thead = document.createElement("thead");
+    const tr = document.createElement("tr");
+    const encabezados = ["Tipo", "Id", "Nombre", "Apellido", "Edad", "AlterEgo" , "Ciudad", "Publicado", "Enemigo","Robos","Asesinatos"];    
+    encabezados.forEach((encabezado) => {
+      const th = document.createElement("th");
+      th.textContent = encabezado;
+      th.dataset.column = encabezado;
+      if(encabezado !== "Tipo"){ 
+        th.addEventListener("click",(e)=>{
+            listadoPersonas_aMostrar.sort((a,b)=>{
+                encabezado = encabezado.charAt(0).toLowerCase() + encabezado.slice(1)
+                console.log(encabezado);    
+                if((a[encabezado] > b[encabezado])){
+                    return 1;
+                }else{
+                    if((a[encabezado] < b[encabezado]))
+                    {
+                        return -1;
+                    }else{
+                        return 0;
+                    }
+                }
+            }); 
+            generarTablaPersonas(listadoPersonas_aMostrar,divTabla);
+            hideColumnBy_userType();
+        });
+      }
+      tr.appendChild(th);
+    });
+    thead.appendChild(tr);
+    tabla.appendChild(thead);
+  }
+  
+  // Función para generar la tabla completa
+  function generarTablaPersonas(personas, divContainer) {
+    if(personas && divContainer)
+    {
+        eliminarTabla();
+        const tabla = document.createElement("table");
+        tabla.id = "tablaId";
+        tabla.dataset.referenciaTabla = "Tabla_completa";
+        
+        generarEncabezadoTabla(tabla);
+        const tbody = document.createElement("tbody");
+        
+        personas.forEach((persona) => {
+            const tr = document.createElement("tr");
+
+            const tdTipo = document.createElement("td");
+            tdTipo.dataset.column = "Tipo";     
+            tdTipo.textContent = persona.constructor.name;
+            tr.appendChild(tdTipo);
+
+            const tdId = document.createElement("td");
+            tdId.textContent = persona.getId();
+            tdId.dataset.column = "Id";
+            tdId.addEventListener("click",(event)=>{
+                let userAux = getUserById(event.target.textContent); 
+                console.log(userAux);
+                if(userAux){
+                    mostrarFormABM(userAux);
+                }
+            });
+            tr.appendChild(tdId);
+
+            const tdNombre = document.createElement("td");
+            tdNombre.textContent = persona.getNombre();
+            tdNombre.dataset.column = "Nombre";
+            tr.appendChild(tdNombre);
+
+            const tdApellido = document.createElement("td");
+            tdApellido.textContent = persona.getApellido();
+            tdApellido.dataset.column = "Apellido";
+            tr.appendChild(tdApellido);
+            
+            const tdEdad = document.createElement("td");
+            tdEdad.textContent = persona.getEdad();
+            tdEdad.dataset.column = "Edad";
+            tr.appendChild(tdEdad);
+
+            const tdAlterEgo = document.createElement("td");
+            tdAlterEgo.dataset.column = "AlterEgo";
+            tr.appendChild(tdAlterEgo);
+
+            const tdCiudad = document.createElement("td");
+            tdCiudad.dataset.column = "Ciudad";
+            tr.appendChild(tdCiudad);
+
+            const tdPublicacion = document.createElement("td");
+            tdPublicacion.dataset.column = "Publicado";
+            tr.appendChild(tdPublicacion);
+
+            const tdEnemigo = document.createElement("td");
+            tdEnemigo.dataset.column = "Enemigo";
+            tr.appendChild(tdEnemigo);
+
+            const tdRobos = document.createElement("td");
+            tdRobos.dataset.column = "Robos";
+            tr.appendChild(tdRobos);
+
+            const tdAsesinatos = document.createElement("td");
+            tdAsesinatos.dataset.column = "Asesinatos";
+            tr.appendChild(tdAsesinatos);
+
+            if(persona instanceof Heroe)
+            {
+                tdAlterEgo.textContent = persona.alterEgo;
+                tdCiudad.textContent = persona.ciudad;
+                tdPublicacion.textContent = persona.publicado;
+            }
+            else
+            {
+                if(persona instanceof Villano)
+                {
+                    tdEnemigo.textContent = persona.enemigo;
+                    tdRobos.textContent = persona.robos;
+                    tdAsesinatos.textContent = persona.asesinatos;
+                }
+            }
+            tbody.appendChild(tr);
+        });
+        tabla.appendChild(tbody);
+        divContainer.appendChild(tabla);
+    }
+  }
+
+
+  // Función para ocultar en base a tipo de usuario a mostrar
+  function hideColumnBy_userType()
+  {
+    let tipoSeleccion = select.value;
+    let arrTipos = Array("AlterEgo","Ciudad","Publicado","Enemigo","Robos","Asesinatos");
+    let aux;
+
+    switch(tipoSeleccion){
+        case "Todos":
+                arrTipos.forEach(element => {
+                    aux = getCheckBox_ByName(element);
+                    if(aux){
+                        aux.disabled = false;
+                        aux.checked = true;
+                    };                    
+                });
+            break;
+        case "Heroe":
+                for(let i=0;i<arrTipos.length;i++){
+                    aux = getCheckBox_ByName(arrTipos[i]);
+                    if(aux){
+                        aux.disabled = (i < 3)?false:true;
+                        aux.checked = (i < 3)?true:false;
+                    };                    
+                }
+            break;
+        case "Villano":
+                for(let i=0;i<arrTipos.length;i++){
+                    aux = getCheckBox_ByName(arrTipos[i]);
+                    if(aux){
+                        aux.disabled = (i > 2)?false:true;
+                        aux.checked = (i > 2)?true:false;
+                    };                    
+                }
+            break;
+    }
+    mapChecksShowOrHide_Columns();
+  }
+  
+    //FUNCION PARA OCULTAR O MOSTRAR, EN BASE A CHECKBOXs
+    function mapChecksShowOrHide_Columns()
+    {
+        if(checkboxes)
+        {
+            checkboxes.forEach(element => {
+                showOrHide(element.name,element.checked);     
+            });
+        }
+    }
+
+
+    //Funcion que oculta o muestra, en base a elemento y booleano que recibe
+    function showOrHide(dataSetName,showOrNot) 
+    {
+        let dataElements = Array.from(document.querySelectorAll(`[data-column=${dataSetName}]`));
+        if(dataElements)
+        {
+            dataElements.forEach(elemento => {
+                elemento.style.display = (showOrNot)?"table-cell":"none";                
+            });
+        }
+    }
+
+  //************************************************************************************************************** */
+
+
+  //*********************************************FUNCIONES MANEJO DE FORMULARIO ABM******************************* */
+
+  //Muestra formulario, recibiendo o no un usuario
+  function mostrarFormABM(user)
+  {
+    //user = user != null?user:new Persona();    
+    let arrOpciones = selectComboTipoUser.options;
+    let arrInputs = formularioABM.querySelectorAll('input');
+
+    if(user == null){
+        arrInputs[0].readOnly = true;
+        const maxId = listadoPersonas_aMostrar.reduce((max, persona) => {
+            return persona.id > max ? persona.id : max;
+          }, 0);
+        arrInputs[0].value = (parseInt(maxId)+1);
+        selectComboTipoUser.value = arrOpciones[0].value;
+        btnAceptar.style.display = "inline-block";
+        btnActualizar.style.display = "none";
+        btnEliminar.style.display = "none";
+        selectComboTipoUser.style.display = "inline-block";
+        for(let i=4; i<inputsABM.length; i++){
+            (inputsABM[i].previousElementSibling).style.display = "none";
+            inputsABM[i].style.display = "none";
+        };
+    }else {
+        arrInputs[0].value = user.getId();
+        arrInputs[0].readOnly = "true";
+        arrInputs[1].value = user.getNombre();
+        arrInputs[2].value = user.getApellido();
+        arrInputs[3].value = user.getEdad(); 
+        btnAceptar.style.display = "none";
+        btnActualizar.style.display = "inline-block";
+        btnEliminar.style.display = "inline-block";
+        selectComboTipoUser.style.display = "none";
+        if(user instanceof Villano){
+            selectComboTipoUser.value = arrOpciones[2].value;
+            selectComboTipoUser.select = arrOpciones[2].value;
+            arrInputs[7].value = user.enemigo;
+            arrInputs[8].value = user.robos;
+            arrInputs[9].value = user.asesinatos;
+        }
+        else{
+            selectComboTipoUser.value = arrOpciones[1].value;
+            selectComboTipoUser.select = arrOpciones[1].value;
+            arrInputs[4].value = user.alterEgo;
+            arrInputs[5].value = user.ciudad;
+            arrInputs[6].value = user.publicado;
+        }
+        //CREO UN EVENTO TIPO CHANGE, PARA ASIGNARLE AL SELECTCOMBOTIPOUSER, ASI DEPENDE EL TIPO HARDCODEADO ACA
+        //SE MUESTRAN LOS INPUTS PARA CLIENTE O PARA EMPLEADO
+        let eventAux = new Event('change');
+        selectComboTipoUser.dispatchEvent(eventAux);
+    }
+
+    formularioTabla.style.display = "none";
+    formularioABM.style.display = "inline-block";
+  }
+
+
+  //Funcion para ocultar resetear abm, ocultarlo y mostrar nuevamente la tabla actualizada
+  function ocultarABM_mostrarTable(){
+    let formABM_Inputs = formularioABM.querySelectorAll('input');
+    formularioTabla.style.display = "inline-block";
+    formularioABM.style.display = "none";
+    formABM_Inputs.forEach(element => {
+        element.value = "";
+    });
+  }
+
+  //************************************************************************************************************** */
+  
+  // Generar la tabla de personas y agregarla al contenedor
+  generarTablaPersonas(listadoPersonas_aMostrar, divTabla);
+</script>
+</html>
